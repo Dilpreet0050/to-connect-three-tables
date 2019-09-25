@@ -1,0 +1,59 @@
+values('A12','Ekam','B224');
+
+
+insert into truck(trucknumber,drivername,ordernumber)
+
+values('A12','Gurbaaz','B225');
+
+
+insert into truck(trucknumber,drivername,ordernumber)
+
+values('A12','Karan','B226');
+
+--------------------------------------------------------------------------------
+CREATE TABLE truck (
+   truck_number varchar(20),
+    driver_name varchar(20),
+    order_number varchar(20),
+  
+    PRIMARY KEY (order_number)
+);
+---------------------------------------------------------------------------------
+
+CREATE TABLE warehouse (
+  item_number varchar(20),
+   item_description varchar(20),
+    shelve_number varchar(20),
+  quantity_in_stock varchar(20),
+    PRIMARY KEY (item_number)
+);
+---------------------------------------------------------------------------------
+CREATE TABLE orders (
+  order_id varchar(20),
+   item_number varchar(20),
+    order_number varchar(20),
+);
+------------------------------------------------------------------------------
+insert into orders(order_id,item_number,order_number)
+
+values ('D32','2','B222');
+
+insert into orders(order_id,item_number,order_number)
+
+values ('D33','3','B223');
+
+insert into orders(order_id,item_number,order_number)
+
+values ('D34','4','B224');
+
+insert into orders(order_id,item_number,order_number)
+
+values ('D35','5','B225');
+
+insert into orders(order_id,item_number,order_number)
+
+values ('D36','6','B226');
+--------------------------------------------------------------------------------
+select* from warehouse as w,orders as o,truck as t
+
+where w.item_number = o.item_number and t.order_number = o.order_number
